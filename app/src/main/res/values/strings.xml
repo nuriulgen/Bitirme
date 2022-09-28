@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">BitirmeOdevi</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="deals">Deals</string>
+    <string name="all">All</string>
+    <string name="flights">Flights</string>
+    <string name="hotels">Hotels</string>
+    <string name="transportations">Transportations</string>
 </resources>
