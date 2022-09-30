@@ -7,4 +7,10 @@
     <string name="flights">Flights</string>
     <string name="hotels">Hotels</string>
     <string name="transportations">Transportations</string>
+    <string name="where_next">Where Next</string>
+    <string name="search">Search</string>
+    <string name="top_destinations">TOP DESTINATIONS</string>
+    <string name="trip_plan">Trip Plan</string>
+    <string name="floatactionbutton">floatActionButton</string>
+    <string name="fab">fab</string>
 </resources>
