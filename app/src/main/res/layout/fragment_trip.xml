@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tripPlanText"
+            style="@style/TitleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="337dp"
+            android:text="@string/trip_plan"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+       <!-- <com.google.android.material.tabs.TabLayout
+
+            android:id="@+id/home_tab"
+            style="@style/TabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:tabContentStart="0dp"
+            app:tabIconTint="@color/tab_icon"
+            app:tabIndicatorColor="#FF4760"
+            app:tabInlineLabel="true"
+            app:tabMaxWidth="200dp"
+            app:tabMode="scrollable"
+            app:tabPaddingEnd="30dp"
+            app:tabPaddingStart="5dp"
+            app:tabRippleColor="#FF4760"
+            app:tabSelectedTextColor="#FF4760"
+            app:tabTextColor="#C2C5D6"
+            tools:ignore="MissingConstraints">
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/allTab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:icon="@drawable/ic_all_icon"
+                android:text="Trips" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/flightsTab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:icon="@drawable/ic_bookmark"
+                android:text="@string/bookmark"
+                tools:layout_editor_absoluteX="183dp"
+                tools:layout_editor_absoluteY="-25dp" />
+
+
+
+        </com.google.android.material.tabs.TabLayout>-->
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/home_tab"
+            style="@style/TabLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tripPlanText"
+            app:tabContentStart="0dp"
+            app:tabIconTint="@color/tab_icon"
+            app:tabIndicatorColor="#FF4760"
+            app:tabInlineLabel="true"
+            app:tabMaxWidth="200dp"
+            app:tabMode="scrollable"
+            app:tabPaddingEnd="30dp"
+            app:tabPaddingStart="5dp"
+            app:tabRippleColor="#FF4760"
+            app:tabSelectedTextColor="#FF4760"
+            app:tabTextColor="#C2C5D6"
+            tools:ignore="MissingConstraints">
+
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/allTab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:icon="@drawable/ic_all_icon"
+                android:text="Trips" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/flightsTab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:icon="@drawable/ic_bookmark"
+                android:text="@string/bookmark"
+                tools:layout_editor_absoluteX="183dp"
+                tools:layout_editor_absoluteY="-25dp" />
+
+
+        </com.google.android.material.tabs.TabLayout>
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="100dp"
+            android:backgroundTint="@color/magic_potion"
+            android:contentDescription="@string/fab"
+
+            app:hideOnScroll="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@android:drawable/ic_input_add"
+            app:tint="@color/white"
+            tools:ignore="MissingConstraints" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
+
+
+
+
+

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.nuriulgen.bitirmeodevi.HomeFragment"
+        android:name="com.nuriulgen.bitirmeodevi.presentation.home.view.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -17,7 +17,7 @@
 
     <fragment
         android:id="@+id/homeDetailFragment"
-        android:name="com.nuriulgen.bitirmeodevi.HomeDetailFragment"
+        android:name="com.nuriulgen.bitirmeodevi.presentation.home.view.HomeDetailFragment"
         android:label="fragment_home_detail"
         tools:layout="@layout/fragment_home_detail" >
         <action
@@ -27,19 +27,19 @@
 
     <fragment
         android:id="@+id/tripFragment"
-        android:name="com.nuriulgen.bitirmeodevi.TripFragment"
+        android:name="com.nuriulgen.bitirmeodevi.presentation.trip.view.TripFragment"
         android:label="fragment_trip"
         tools:layout="@layout/fragment_trip" />
 
     <fragment
         android:id="@+id/guideFragment"
-        android:name="com.nuriulgen.bitirmeodevi.GuideFragment"
+        android:name="com.nuriulgen.bitirmeodevi.presentation.guide.view.GuideFragment"
         android:label="fragment_guide"
         tools:layout="@layout/fragment_guide" />
 
     <fragment
         android:id="@+id/searchFragment"
-        android:name="com.nuriulgen.bitirmeodevi.SearchFragment"
+        android:name="com.nuriulgen.bitirmeodevi.presentation.search.view.SearchFragment"
         android:label="fragment_search"
         tools:layout="@layout/fragment_search" />
 </navigation>

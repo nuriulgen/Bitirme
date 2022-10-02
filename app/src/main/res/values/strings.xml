@@ -13,4 +13,8 @@
     <string name="trip_plan">Trip Plan</string>
     <string name="floatactionbutton">floatActionButton</string>
     <string name="fab">fab</string>
+    <string name="bookmark">Bookmark</string>
+    <string name="hintText">A country, a city, a place... or anything</string>
+    <string name="might_need_these">Mıght need these</string>
+    <string name="guide">Guide</string>
 </resources>
