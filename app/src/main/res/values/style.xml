@@ -46,4 +46,32 @@
         <item name="android:backgroundTint">#FCFCFD</item>
     </style>
 
+    <style name="CornerImage" parent="">
+        <item name="cornerSizeBottomRight">32dp</item>
+        <item name="cornerSizeBottomLeft">32dp</item>
+    </style>
+
+
+    <style name="CustomButtonStyle">
+        <item name="android:textSize">16sp</item>
+        <item name="android:backgroundTint">@color/magic_potion</item>
+        <item name="cornerRadius">6dp</item>
+        <item name="android:fontFamily">@font/montserrat_alternates_semibold</item>
+        <item name="android:fontWeight" tools:targetApi="o">600</item>
+    </style>
+
+    <style name="CustomBackButtonStyle">
+        <item name="android:layout_width">48dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:src">"@drawable/ic_left_arrow"</item>
+        <item name="android:background">"@drawable/circular_button"</item>
+    </style>
+
+    <style name="CustomStyle">
+        <item name="android:layout_width">48dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="itemActiveIndicatorStyle">"@drawable/ic_nav_bar_background"</item>
+        <item name="android:background">"@drawable/ic_nav_bar_background"</item>
+    </style>
 </resources>
