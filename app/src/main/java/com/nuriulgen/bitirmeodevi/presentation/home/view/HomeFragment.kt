@@ -32,9 +32,6 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.dealsText.setOnClickListener {
-           /* val intent = Intent(context, HomeDetailFragment::class.java)
-            startActivity(intent)*/
-
             val action = HomeFragmentDirections.actionHomeFragmentToHomeDetailFragment()
             Navigation.findNavController(it).navigate(action)
 

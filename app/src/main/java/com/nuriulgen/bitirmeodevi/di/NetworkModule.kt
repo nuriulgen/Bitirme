@@ -1,7 +1,7 @@
 package com.nuriulgen.bitirmeodevi.di
 
 import com.nuriulgen.bitirmeodevi.data.remote.ApiService
-import com.nuriulgen.bitirmeodevi.di.repository.TopDestinationRepositoryImp
+import com.nuriulgen.bitirmeodevi.data.remote.repository.TopDestinationRepositoryImp
 import com.nuriulgen.bitirmeodevi.domain.repository.TopDestinationRepository
 import com.nuriulgen.bitirmeodevi.util.ProjectConstants.Companion.BASE_URL
 import dagger.Module
