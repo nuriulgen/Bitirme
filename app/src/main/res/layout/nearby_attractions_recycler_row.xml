@@ -12,7 +12,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
-        android:layout_height="match_parent">
+        android:layout_height="150dp">
 
 
         <ImageView
@@ -29,10 +29,14 @@
             android:id="@+id/categoryButton"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:layout_marginStart="18dp"
+            android:layout_marginStart="12dp"
             android:layout_marginTop="18dp"
+            android:fontFamily="@font/source_sans_pro_semibold"
             android:gravity="center_horizontal|center_vertical"
             android:text=""
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="#FCFCFD"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -47,30 +51,41 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_bookmark_vector"
-            tools:ignore="MissingConstraints" />
+            tools:ignore="MissingConstraints"
+            android:contentDescription="@string/nearbyattractionimages" />
 
         <TextView
             android:id="@+id/titleText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="56dp"
-            android:text="TextView"
+            android:text=""
+            android:fontFamily="@font/source_sans_pro_bold"
+            android:textSize="25sp"
+            android:textFontWeight="700"
+            android:textColor="#FCFCFD"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.501"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/backgroundImage"
-            tools:ignore="MissingConstraints" />
+            tools:ignore="MissingConstraints"
+            tools:targetApi="p" />
 
         <TextView
             android:id="@+id/subTitleText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="TextView"
+            android:layout_marginTop="4dp"
+            android:text=""
+            android:fontFamily="@font/source_sans_pro_regular"
+            android:textSize="25sp"
+            android:textFontWeight="400"
+            android:textColor="#FCFCFD"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.501"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/titleText"
-            tools:ignore="MissingConstraints" />
+            tools:ignore="MissingConstraints"
+            tools:targetApi="p" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
