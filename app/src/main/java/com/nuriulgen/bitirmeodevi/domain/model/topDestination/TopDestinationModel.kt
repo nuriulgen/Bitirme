@@ -1,4 +1,4 @@
-package com.nuriulgen.bitirmeodevi.domain.model
+package com.nuriulgen.bitirmeodevi.domain.model.topDestination
 
 data class TopDestinationModel(
     val category: String?,

@@ -1,7 +1,7 @@
 package com.nuriulgen.bitirmeodevi.data.remote.repository
 
 import com.nuriulgen.bitirmeodevi.data.remote.ApiService
-import com.nuriulgen.bitirmeodevi.domain.model.TopDestinationModel
+import com.nuriulgen.bitirmeodevi.domain.model.topDestination.TopDestinationModel
 import com.nuriulgen.bitirmeodevi.domain.repository.TopDestinationRepository
 import retrofit2.Call
 
