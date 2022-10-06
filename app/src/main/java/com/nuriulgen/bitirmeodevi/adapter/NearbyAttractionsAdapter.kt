@@ -13,7 +13,8 @@ import kotlinx.android.synthetic.main.top_destination_recycler_row.view.*
 import kotlinx.android.synthetic.main.top_destination_recycler_row.view.subTitleText
 import kotlinx.android.synthetic.main.top_destination_recycler_row.view.titleText
 
-class NearbyAttractionsAdapter(private val itemList: List<NearbyAttractionsModel>): RecyclerView.Adapter<NearbyAttractionsAdapter.NearbyAttractionsViewHolder>() {
+class NearbyAttractionsAdapter(private val itemList: List<NearbyAttractionsModel>):
+    RecyclerView.Adapter<NearbyAttractionsAdapter.NearbyAttractionsViewHolder>() {
 
     class NearbyAttractionsViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {}
 

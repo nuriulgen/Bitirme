@@ -1,5 +1,6 @@
 package com.nuriulgen.bitirmeodevi.domain.usecase
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.nuriulgen.bitirmeodevi.domain.model.nearbyAttractions.NearbyAttractionsModel
@@ -12,7 +13,9 @@ import javax.inject.Inject
 class NearbyAttractionsUseCase @Inject constructor(
     private val nearbyAttractionsRepository: NearbyAttractionsRepository
 ) {
-
+    /**
+     * Encapsulation
+     */
     private var _nearbyAttractions = MutableLiveData<List<NearbyAttractionsModel>>()
     val nearbyAttractions : LiveData<List<NearbyAttractionsModel>> = _nearbyAttractions
 
@@ -26,7 +29,7 @@ class NearbyAttractionsUseCase @Inject constructor(
             }
 
             override fun onFailure(call: Call<List<NearbyAttractionsModel>>, t: Throwable) {
-                println("Error $t")
+                Log.e("Nearby Attractions Error", t.toString())
             }
 
         } )

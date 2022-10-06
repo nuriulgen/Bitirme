@@ -74,4 +74,9 @@
         <item name="itemActiveIndicatorStyle">"@drawable/ic_nav_bar_background"</item>
         <item name="android:background">"@drawable/ic_nav_bar_background"</item>
     </style>
+
+    <style name="roundedImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">6dp</item>
+    </style>
 </resources>

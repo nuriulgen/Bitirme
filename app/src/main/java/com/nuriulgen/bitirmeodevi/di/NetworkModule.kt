@@ -1,8 +1,10 @@
 package com.nuriulgen.bitirmeodevi.di
 
 import com.nuriulgen.bitirmeodevi.data.remote.ApiService
+import com.nuriulgen.bitirmeodevi.data.remote.repository.MightNeedRepositoryImp
 import com.nuriulgen.bitirmeodevi.data.remote.repository.NearbyAttractionsRepositoryImp
 import com.nuriulgen.bitirmeodevi.data.remote.repository.TopDestinationRepositoryImp
+import com.nuriulgen.bitirmeodevi.domain.repository.MightNeedRepository
 import com.nuriulgen.bitirmeodevi.domain.repository.NearbyAttractionsRepository
 import com.nuriulgen.bitirmeodevi.domain.repository.TopDestinationRepository
 import com.nuriulgen.bitirmeodevi.util.ProjectConstants.Companion.BASE_URL
@@ -13,7 +15,6 @@ import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
-
 
 @InstallIn(SingletonComponent::class)
 @Module
@@ -50,6 +51,12 @@ class NetworkModule {
     @Singleton
     fun provideNearbyAttractionsRepository(apiService: ApiService): NearbyAttractionsRepository{
         return NearbyAttractionsRepositoryImp(apiService)
+    }
+
+    @Provides
+    @Singleton
+    fun provideMightNeedRepository(apiService: ApiService): MightNeedRepository{
+        return MightNeedRepositoryImp(apiService)
     }
 
 }
