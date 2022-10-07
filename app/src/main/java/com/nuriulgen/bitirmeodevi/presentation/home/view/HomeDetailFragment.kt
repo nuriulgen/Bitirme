@@ -1,26 +1,25 @@
 package com.nuriulgen.bitirmeodevi.presentation.home.view
 
-import android.content.Context
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.Toast
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
-import androidx.test.core.app.ApplicationProvider
-import androidx.test.core.app.ApplicationProvider.getApplicationContext
-import com.nuriulgen.bitirmeodevi.R
-import com.nuriulgen.bitirmeodevi.databinding.FragmentHomeBinding
+import androidx.navigation.fragment.navArgs
+import com.bumptech.glide.Glide
 import com.nuriulgen.bitirmeodevi.databinding.FragmentHomeDetailBinding
+import com.nuriulgen.bitirmeodevi.util.downloadImage
 
 
 class HomeDetailFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeDetailBinding
+    private val args: HomeDetailFragmentArgs by navArgs()
+
     private var zoomOut = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,6 +36,18 @@ class HomeDetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val temp = args.model
+        binding.apply {
+              titleText.text = temp.title
+              textView3.text = temp.description
+             Glide.with(view)
+                .load(temp.images?.get(0)?.url.toString())
+                .into(binding.backgroundImageView)
+        }
+
+
+     /*   downloadImage(view as ImageView,temp.images?.get(0)?.url.toString())   */
 
     /*    binding.backgroundImageView.setOnClickListener {
             if (zoomOut) {
@@ -70,6 +81,4 @@ class HomeDetailFragment : Fragment() {
             Navigation.findNavController(it).navigate(action)
         }
     }
-
-
 }
