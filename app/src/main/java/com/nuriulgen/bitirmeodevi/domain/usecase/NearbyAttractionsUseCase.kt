@@ -3,7 +3,7 @@ package com.nuriulgen.bitirmeodevi.domain.usecase
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.nuriulgen.bitirmeodevi.domain.model.nearbyAttractions.NearbyAttractionsModel
+import com.nuriulgen.bitirmeodevi.domain.model.TravelModel
 import com.nuriulgen.bitirmeodevi.domain.repository.NearbyAttractionsRepository
 import retrofit2.Call
 import retrofit2.Callback
@@ -16,19 +16,19 @@ class NearbyAttractionsUseCase @Inject constructor(
     /**
      * Encapsulation
      */
-    private var _nearbyAttractions = MutableLiveData<List<NearbyAttractionsModel>>()
-    val nearbyAttractions : LiveData<List<NearbyAttractionsModel>> = _nearbyAttractions
+    private var _nearbyAttractions = MutableLiveData<List<TravelModel>>()
+    val nearbyAttractions : LiveData<List<TravelModel>> = _nearbyAttractions
 
     fun getNearbyAttractions(){
-        nearbyAttractionsRepository.fetchNearbyAttractions().enqueue(object: Callback<List<NearbyAttractionsModel>>{
+        nearbyAttractionsRepository.fetchNearbyAttractions().enqueue(object: Callback<List<TravelModel>>{
             override fun onResponse(
-                call: Call<List<NearbyAttractionsModel>>,
-                response: Response<List<NearbyAttractionsModel>>
+                call: Call<List<TravelModel>>,
+                response: Response<List<TravelModel>>
             ) {
                 _nearbyAttractions.value = response.body()
             }
 
-            override fun onFailure(call: Call<List<NearbyAttractionsModel>>, t: Throwable) {
+            override fun onFailure(call: Call<List<TravelModel>>, t: Throwable) {
                 Log.e("Nearby Attractions Error", t.toString())
             }
 

@@ -1,20 +1,23 @@
 package com.nuriulgen.bitirmeodevi.presentation.home.view
 
-import android.app.Activity
-import android.content.Intent
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.Navigation
-import com.nuriulgen.bitirmeodevi.R
+import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.nuriulgen.bitirmeodevi.adapter.AllAdapter
 import com.nuriulgen.bitirmeodevi.databinding.FragmentHomeBinding
+import com.nuriulgen.bitirmeodevi.presentation.home.viewmodel.HomeViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class HomeFragment : Fragment() {
 
     private lateinit var binding : FragmentHomeBinding
+    private val homeViewModel by viewModels<HomeViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,10 +34,10 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.dealsText.setOnClickListener {
-            val action = HomeFragmentDirections.actionHomeFragmentToHomeDetailFragment()
-            Navigation.findNavController(it).navigate(action)
 
+        homeViewModel.fetchAll().observe(viewLifecycleOwner){
+            binding.allRecycler.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL,false)
+            binding.allRecycler.adapter = AllAdapter(it)
         }
     }
 

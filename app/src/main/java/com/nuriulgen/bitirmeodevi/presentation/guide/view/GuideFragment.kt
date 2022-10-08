@@ -9,10 +9,11 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.nuriulgen.bitirmeodevi.R
 import com.nuriulgen.bitirmeodevi.adapter.MightNeedAdapter
+import com.nuriulgen.bitirmeodevi.adapter.TopPickAdapter
 import com.nuriulgen.bitirmeodevi.databinding.FragmentGuideBinding
+
 import com.nuriulgen.bitirmeodevi.presentation.guide.viewmodel.GuideViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.fragment_guide.*
 
 @AndroidEntryPoint
 class GuideFragment : Fragment() {
@@ -37,9 +38,15 @@ class GuideFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         guideViewModel.fetchMightNeed().observe(viewLifecycleOwner){
-         mightNeedRecycler.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
-         mightNeedRecycler.adapter = MightNeedAdapter(it)
+            binding.mightNeedRecycler.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
+            binding.mightNeedRecycler.adapter = MightNeedAdapter(it)
         }
+
+        guideViewModel.fetchTopPick().observe(viewLifecycleOwner){
+            binding.topPickRecycler.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
+            binding.topPickRecycler.adapter = TopPickAdapter(it)
+        }
+
     }
 
 }

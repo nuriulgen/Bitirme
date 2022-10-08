@@ -28,10 +28,7 @@
             app:destination="@id/homeFragment" />
         <argument
             android:name="model"
-            app:argType="com.nuriulgen.bitirmeodevi.domain.model.topDestination.TopDestinationModel" />
-        <argument
-            android:name="nearbyModel"
-            app:argType="com.nuriulgen.bitirmeodevi.domain.model.nearbyAttractions.NearbyAttractionsModel" />
+            app:argType="com.nuriulgen.bitirmeodevi.domain.model.TravelModel" />
     </fragment>
 
     <fragment
@@ -44,7 +41,11 @@
         android:id="@+id/guideFragment"
         android:name="com.nuriulgen.bitirmeodevi.presentation.guide.view.GuideFragment"
         android:label="fragment_guide"
-        tools:layout="@layout/fragment_guide" />
+        tools:layout="@layout/fragment_guide" >
+        <action
+            android:id="@+id/action_guideFragment_to_homeDetailFragment"
+            app:destination="@id/homeDetailFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/searchFragment"

@@ -1,4 +1,4 @@
-package com.nuriulgen.bitirmeodevi.domain.model.topDestination
+package com.nuriulgen.bitirmeodevi.domain.model
 
 
 import android.os.Parcelable

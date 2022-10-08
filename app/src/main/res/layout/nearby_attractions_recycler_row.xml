@@ -5,8 +5,8 @@
 
     <data>
         <variable
-            name="nearbyAttraction"
-            type="com.nuriulgen.bitirmeodevi.domain.model.nearbyAttractions.NearbyAttractionsModel" />
+            name="nearbyAttractionXMl"
+            type="com.nuriulgen.bitirmeodevi.domain.model.TravelModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -35,7 +35,7 @@
             android:layout_marginTop="18dp"
             android:fontFamily="@font/source_sans_pro_semibold"
             android:gravity="center_horizontal|center_vertical"
-            android:text="@{nearbyAttraction.category}"
+            android:text="@{nearbyAttractionXMl.category}"
             android:textAlignment="center"
             android:textAllCaps="true"
             android:textColor="#FCFCFD"
@@ -61,7 +61,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="56dp"
-            android:text="@{nearbyAttraction.city}"
+            android:text="@{nearbyAttractionXMl.city}"
             android:fontFamily="@font/source_sans_pro_bold"
             android:textSize="25sp"
             android:textFontWeight="700"
@@ -78,7 +78,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:text="@{nearbyAttraction.country}"
+            android:text="@{nearbyAttractionXMl.country}"
             android:fontFamily="@font/source_sans_pro_regular"
             android:textSize="25sp"
             android:textFontWeight="400"

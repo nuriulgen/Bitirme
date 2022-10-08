@@ -8,142 +8,131 @@
 
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/backgroundImageView"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="380dp"
-            android:elevation="85dp"
-            android:scaleType="centerCrop"
-            android:shadowColor="@color/magic_potion"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:shapeAppearanceOverlay="@style/CornerImage"
-            app:srcCompat="@drawable/home_detail" />
+            android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/titleText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:fontFamily="@font/montserrat_regular"
-            android:text="Nusa Pedina"
-            android:textColor="#0A2753"
-            android:textFontWeight="400"
-            android:textSize="28sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/backgroundImageView"
-            tools:targetApi="p" />
-
-
-        <ImageButton
-            android:id="@+id/likeButton"
-            android:layout_width="33dp"
-            android:layout_height="33dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="16dp"
-            android:background="@drawable/circular_background"
-            android:contentDescription="SignUp"
-            android:src="@drawable/ic_heart_button"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.953"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/backgroundImageView"
-            tools:ignore="MissingConstraints" />
-
-        <TextView
-            android:id="@+id/subTitleText"
-            android:layout_width="wrap_content"
-            android:layout_height="35dp"
-            android:layout_marginStart="44dp"
-            android:layout_marginTop="10dp"
-            android:text="Bali, Indonesia"
-            android:textAllCaps="false"
-            android:textColor="#39414B"
-            android:textFontWeight="300"
-            android:textSize="15sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/titleText"
-            tools:targetApi="p" />
-
-       <!-- <TextView
-            android:id="@+id/textView3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:fontFamily="@font/montserrat_regular"
-            android:text="@string/lorrem_ipsum"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.545"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/subTitleText"
-            tools:ignore="MissingConstraints" />-->
-        <ScrollView
-            android:id="@+id/scrollView"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_marginTop="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            android:fillViewport="true"
-            app:layout_constraintTop_toBottomOf="@+id/subTitleText"
-            tools:ignore="MissingConstraints">
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/backgroundImageView"
+                android:layout_width="match_parent"
+                android:layout_height="380dp"
+                android:elevation="85dp"
+                android:scaleType="centerCrop"
+                android:shadowColor="@color/magic_potion"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/CornerImage" />
 
             <TextView
-                android:id="@+id/textView3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
+                android:id="@+id/titleText"
+                android:layout_width="251dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
                 android:fontFamily="@font/montserrat_regular"
                 android:text=""
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.545"
+                android:textColor="#0A2753"
+                android:textFontWeight="400"
+                android:textSize="28sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/subTitleText"
+                app:layout_constraintTop_toBottomOf="@+id/backgroundImageView"
+                tools:targetApi="p" />
+
+            <ImageButton
+                android:id="@+id/likeButton"
+                android:layout_width="33dp"
+                android:layout_height="33dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/circular_background"
+                android:contentDescription="SignUp"
+                android:src="@drawable/ic_heart_button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.953"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/backgroundImageView"
                 tools:ignore="MissingConstraints" />
 
-        </ScrollView>
-
-        <Button
-            android:id="@+id/addBookmarkButton"
-            style="@style/CustomButtonStyle"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Add Bookmark"
-            android:textAllCaps="false"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/scrollView" />
-
-        <ImageButton
-            android:id="@+id/imageButton"
-            android:layout_width="10dp"
-            android:layout_height="15dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="5dp"
-            android:background="@color/white"
-            android:contentDescription="@string/locationbutton"
-            app:layout_constraintEnd_toStartOf="@+id/subTitleText"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/titleText"
-            app:srcCompat="@drawable/ic_location" />
+            <TextView
+                android:id="@+id/subTitleText"
+                android:layout_width="158dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="44dp"
+                android:layout_marginTop="10dp"
+                android:text=""
+                android:textAllCaps="false"
+                android:textColor="#39414B"
+                android:textFontWeight="300"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleText"
+                tools:targetApi="p" />
 
 
+            <ScrollView
+                android:id="@+id/scrollView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                android:fillViewport="true"
+                app:layout_constraintTop_toBottomOf="@+id/subTitleText"
+                tools:ignore="MissingConstraints">
 
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:fontFamily="@font/source_sans_pro_semibold"
+                    android:text=""
+                    android:textSize="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.545"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/subTitleText"
+                    tools:ignore="MissingConstraints" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            </ScrollView>
+
+            <Button
+                android:id="@+id/addBookmarkButton"
+                style="@style/CustomButtonStyle"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Add Bookmark"
+                android:textAllCaps="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/scrollView" />
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="10dp"
+                android:layout_height="15dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="5dp"
+                android:background="@color/white"
+                android:contentDescription="@string/locationbutton"
+                app:layout_constraintEnd_toStartOf="@+id/subTitleText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleText"
+                app:srcCompat="@drawable/ic_location" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
 
 </layout>
 

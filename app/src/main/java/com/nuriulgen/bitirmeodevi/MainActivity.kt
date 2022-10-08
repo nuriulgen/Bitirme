@@ -24,12 +24,6 @@ class MainActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
         showBottomNavigation()
-
-       /* var bottomNavigationMenuView = (bottomNavigationView[0] as BottomNavigationMenuView)
-        if (bottomNavigationMenuView.isNotEmpty()) {
-            bottomNavigationMenuView[TAB_INDEX].setBackgroundResource(R.drawable.ic_nav_bar_background)
-        }*/
-
     }
 
     private fun showBottomNavigation(){

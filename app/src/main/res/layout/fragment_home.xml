@@ -8,7 +8,7 @@
 
     </data>
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
 
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -29,7 +29,6 @@
 
             </ImageView>
 
-
             <TextView
                 android:id="@+id/dealsText"
                 android:layout_width="wrap_content"
@@ -44,7 +43,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView2"
                 tools:targetApi="p" />
-
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/home_tab"
@@ -93,53 +91,21 @@
                     android:text="@string/transportations" />
 
 
+
             </com.google.android.material.tabs.TabLayout>
 
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
-                android:layout_marginTop="563dp"
-                android:text="Hello World!"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/allRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="36dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/button"
-                app:layout_constraintVertical_chainStyle="spread" />
-
-            <Button
-                android:id="@+id/button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="168dp"
-                android:layout_marginTop="136dp"
-                android:text="Button"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView2"
-                app:layout_constraintVertical_chainStyle="spread" />
-
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="152dp"
-                android:layout_marginTop="616dp"
-                android:text="Button"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <Button
-                android:id="@+id/button3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="68dp"
-                android:layout_marginTop="76dp"
-                android:text="Button"
-                app:layout_constraintStart_toEndOf="@+id/textView"
-                app:layout_constraintTop_toBottomOf="@+id/button2" />
+                app:layout_constraintTop_toBottomOf="@+id/home_tab" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 </layout>
 
 

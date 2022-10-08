@@ -5,8 +5,11 @@
 
     <data>
         <variable
-            name="mightNeed"
-            type="com.nuriulgen.bitirmeodevi.domain.model.mightNeed.MightNeedModel" />
+            name="mightNeedXMl"
+            type="com.nuriulgen.bitirmeodevi.domain.model.TravelModel" />
+        <variable
+            name="mightNeedXMlImage"
+            type="com.nuriulgen.bitirmeodevi.domain.model.Image" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="110dp"
@@ -22,13 +25,15 @@
             app:shapeAppearanceOverlay="@style/roundedImageView"
             app:srcCompat="@drawable/ic_launcher_background" />
 
+
+
         <TextView
             android:id="@+id/mightTitle"
             android:layout_width="wrap_content"
             android:layout_height="25dp"
             android:layout_marginBottom="8dp"
             android:fontFamily="@font/source_sans_pro_semibold"
-            android:text="@{mightNeed.country}"
+            android:text="@{mightNeedXMl.country}"
             android:textColor="#FCFCFD"
             android:textFontWeight="700"
             android:textSize="16sp"

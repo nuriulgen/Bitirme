@@ -1,12 +1,8 @@
 package com.nuriulgen.bitirmeodevi.di
 
 import com.nuriulgen.bitirmeodevi.data.remote.ApiService
-import com.nuriulgen.bitirmeodevi.data.remote.repository.MightNeedRepositoryImp
-import com.nuriulgen.bitirmeodevi.data.remote.repository.NearbyAttractionsRepositoryImp
-import com.nuriulgen.bitirmeodevi.data.remote.repository.TopDestinationRepositoryImp
-import com.nuriulgen.bitirmeodevi.domain.repository.MightNeedRepository
-import com.nuriulgen.bitirmeodevi.domain.repository.NearbyAttractionsRepository
-import com.nuriulgen.bitirmeodevi.domain.repository.TopDestinationRepository
+import com.nuriulgen.bitirmeodevi.data.remote.repository.*
+import com.nuriulgen.bitirmeodevi.domain.repository.*
 import com.nuriulgen.bitirmeodevi.util.ProjectConstants.Companion.BASE_URL
 import dagger.Module
 import dagger.Provides
@@ -57,6 +53,18 @@ class NetworkModule {
     @Singleton
     fun provideMightNeedRepository(apiService: ApiService): MightNeedRepository{
         return MightNeedRepositoryImp(apiService)
+    }
+
+    @Provides
+    @Singleton
+    fun provideTopPickRepository(apiService: ApiService): TopPickRepository{
+        return TopPickRepositoryImp(apiService)
+    }
+
+    @Provides
+    @Singleton
+    fun provideAllRepository(apiService: ApiService): AllRepository{
+        return AllRepositoryImp(apiService)
     }
 
 }

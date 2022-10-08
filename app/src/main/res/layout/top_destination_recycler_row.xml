@@ -5,8 +5,8 @@
 
     <data>
     <variable
-        name="topDestination"
-        type="com.nuriulgen.bitirmeodevi.domain.model.topDestination.TopDestinationModel" />
+        name="topDestinationXMl"
+        type="com.nuriulgen.bitirmeodevi.domain.model.TravelModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -30,7 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="75dp"
-            android:text="@{topDestination.city}"
+            android:text="@{topDestinationXMl.city}"
             android:fontFamily="@font/source_sans_pro_bold"
             android:textColor="#FCFCFD"
             android:textAlignment="center"
@@ -48,7 +48,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:fontFamily="@font/source_sans_pro_regular"
-            android:text="@{topDestination.country}"
+            android:text="@{topDestinationXMl.country}"
             android:textAlignment="center"
             android:textColor="#FCFCFD"
             android:textFontWeight="400"
