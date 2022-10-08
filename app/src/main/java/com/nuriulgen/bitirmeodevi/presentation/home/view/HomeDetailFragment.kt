@@ -1,18 +1,14 @@
 package com.nuriulgen.bitirmeodevi.presentation.home.view
 
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.nuriulgen.bitirmeodevi.databinding.FragmentHomeDetailBinding
-import com.nuriulgen.bitirmeodevi.util.downloadImage
 
 
 class HomeDetailFragment : Fragment() {
@@ -37,17 +33,21 @@ class HomeDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val temp = args.model
+        /*
+         * detail sayfasına gönderilen değerleri alma işlemi yaptıldı.
+         */
+        val response = args.model
         binding.apply {
-              titleText.text = temp.title
-              textView3.text = temp.description
+              /**
+               * detail sayfasına gelen değerleri ilgili widgetlere gönderildi.
+               */
+              titleText.text = response.title
+              subTitleText.text = response.country
+              textView3.text = response.description
              Glide.with(view)
-                .load(temp.images?.get(0)?.url.toString())
+                .load(response.images?.get(0)?.url.toString())
                 .into(binding.backgroundImageView)
         }
-
-
-     /*   downloadImage(view as ImageView,temp.images?.get(0)?.url.toString())   */
 
     /*    binding.backgroundImageView.setOnClickListener {
             if (zoomOut) {
