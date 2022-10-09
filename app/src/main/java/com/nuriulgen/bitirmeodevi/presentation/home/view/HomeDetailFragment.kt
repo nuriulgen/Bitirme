@@ -76,8 +76,9 @@ class HomeDetailFragment : Fragment() {
                 zoomOut = true
             }
         }*/
+
         binding.likeButton.setOnClickListener {
-            val action = HomeDetailFragmentDirections.actionHomeDetailFragmentToImageFullScreenFragment()
+            val action = HomeDetailFragmentDirections.actionHomeDetailFragmentToImageFullScreenFragment(response)
             Navigation.findNavController(it).navigate(action)
         }
     }

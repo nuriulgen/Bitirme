@@ -29,7 +29,7 @@
             android:layout_width="43dp"
             android:layout_height="43dp"
             android:layout_marginTop="16dp"
-            android:background="@drawable/circular_background"
+            android:background="@drawable/bookmark_background"
             android:src="@drawable/ic_back_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.044"

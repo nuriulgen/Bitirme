@@ -50,8 +50,7 @@
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="16dp"
                 android:background="@drawable/circular_background"
-                android:contentDescription="SignUp"
-                android:src="@drawable/ic_heart_button"
+                android:src="@drawable/ic_zoom"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.953"
                 app:layout_constraintStart_toStartOf="parent"
@@ -74,35 +73,21 @@
                 tools:targetApi="p" />
 
 
-            <ScrollView
-                android:id="@+id/scrollView"
+            <TextView
+                android:id="@+id/textView3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/source_sans_pro_semibold"
+                android:text=""
+                android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintHorizontal_bias="0.545"
                 app:layout_constraintStart_toStartOf="parent"
-                android:fillViewport="true"
                 app:layout_constraintTop_toBottomOf="@+id/subTitleText"
-                tools:ignore="MissingConstraints">
-
-                <TextView
-                    android:id="@+id/textView3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginEnd="16dp"
-                    android:fontFamily="@font/source_sans_pro_semibold"
-                    android:text=""
-                    android:textSize="16dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.545"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/subTitleText"
-                    tools:ignore="MissingConstraints" />
-
-            </ScrollView>
+                tools:ignore="MissingConstraints" />
 
             <Button
                 android:id="@+id/addBookmarkButton"
@@ -114,7 +99,7 @@
                 android:textAllCaps="false"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/scrollView" />
+                app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
             <ImageButton
                 android:id="@+id/imageButton"

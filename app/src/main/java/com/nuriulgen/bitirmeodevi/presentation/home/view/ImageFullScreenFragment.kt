@@ -6,15 +6,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
+import com.bumptech.glide.Glide
 import com.nuriulgen.bitirmeodevi.databinding.FragmentImageFullScreenBinding
 
 
 class ImageFullScreenFragment : Fragment() {
 
     private lateinit var binding: FragmentImageFullScreenBinding
+    private val args: ImageFullScreenFragmentArgs by navArgs()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
 
     override fun onCreateView(
@@ -28,12 +33,23 @@ class ImageFullScreenFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val bundle = arguments
-        val imagePath = bundle!!.getString("image")
+        val response = args.imageModel
+        binding.apply {
+            /**
+             * detail sayfasına gelen image full screen yapıldı.
+             */
+            Glide.with(view)
+                .load(response.images?.get(0)?.url.toString())
+                .into(binding.fullScreemImageView)
 
+        }
 
-        val bitmap = BitmapFactory.decodeFile(imagePath)
-        binding.fullScreemImageView.setImageBitmap(bitmap)
+        binding.backButton.setOnClickListener {
+            /*
+             * back butona basıldıktan sonra geri detail sayfasına gönderilme işlemi yapıldı.
+             */
+            val navController = findNavController();
+            navController.popBackStack()
+        }
     }
-
 }
