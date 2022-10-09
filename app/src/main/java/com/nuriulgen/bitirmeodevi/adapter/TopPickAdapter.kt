@@ -23,8 +23,7 @@ class TopPickAdapter(private val model: List<TravelModel>) : RecyclerView.Adapte
     }
 
     override fun onBindViewHolder(holder: TopPickViewHolder, position: Int) {
-        holder.view.title.text = model[position].title
-        holder.view.title.text = model[position].description
+        holder.view.topPickXMl = model[position]
 
         model[position].images?.get(0)?.let { holder.view.imageView4.showImage(it.url,
             showPlaceHolder(holder.itemView.context)

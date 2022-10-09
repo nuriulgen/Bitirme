@@ -8,6 +8,7 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.nuriulgen.bitirmeodevi.R
 import com.nuriulgen.bitirmeodevi.databinding.MightNeedRecyclerRowBinding
+
 import com.nuriulgen.bitirmeodevi.domain.model.TravelModel
 import com.nuriulgen.bitirmeodevi.presentation.guide.view.GuideFragmentDirections
 import com.nuriulgen.bitirmeodevi.presentation.search.view.SearchFragmentDirections
@@ -15,8 +16,7 @@ import com.nuriulgen.bitirmeodevi.util.showImage
 import com.nuriulgen.bitirmeodevi.util.showPlaceHolder
 
 
-class MightNeedAdapter(private val itemList: List<TravelModel>):
-RecyclerView.Adapter<MightNeedAdapter.MightNeedViewHolder>(){
+class MightNeedAdapter(private val itemList: List<TravelModel>): RecyclerView.Adapter<MightNeedAdapter.MightNeedViewHolder>(){
 
     class MightNeedViewHolder(var view: MightNeedRecyclerRowBinding): RecyclerView.ViewHolder(view.root)
 

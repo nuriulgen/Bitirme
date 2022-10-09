@@ -6,14 +6,17 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="topPickXMl"
+            type="com.nuriulgen.bitirmeodevi.domain.model.TravelModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="250dp"
         android:layout_height="270dp"
         android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp">
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="20dp">
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -28,20 +31,25 @@
 
             <TextView
                 android:id="@+id/title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="135dp"
+                android:layout_height="20dp"
+                android:fontFamily="@font/source_sans_pro_semibold"
+                android:textSize="14sp"
+                android:textColor="#0048F0"
                 android:layout_marginTop="175dp"
                 android:layout_marginStart="12dp"
-                android:text="TextView" />
+                android:text="@{topPickXMl.country}" />
 
             <TextView
                 android:id="@+id/description"
-                android:layout_width="211dp"
-                android:layout_height="67dp"
-                android:layout_marginTop="195dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp"
-                android:text="TextView"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="215dp"
+                android:layout_marginEnd="12dp"
+                android:fontFamily="@font/source_sans_pro_bold"
+                android:text="@{topPickXMl.title}"
+                android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent" />
         </androidx.cardview.widget.CardView>
     </androidx.constraintlayout.widget.ConstraintLayout>
