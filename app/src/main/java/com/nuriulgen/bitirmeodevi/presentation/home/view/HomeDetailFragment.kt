@@ -48,36 +48,7 @@ class HomeDetailFragment : Fragment() {
                 .load(response.images?.get(0)?.url.toString())
                 .into(binding.backgroundImageView)
         }
-
-    /*    binding.backgroundImageView.setOnClickListener {
-            if (zoomOut) {
-                Toast.makeText(
-                    getApplicationContext(),
-                    "NORMAL SIZE!",
-                    Toast.LENGTH_LONG
-                ).show()
-                binding.backgroundImageView.layoutParams = ConstraintLayout.LayoutParams(
-                    ConstraintLayout.LayoutParams.WRAP_CONTENT,
-                    ConstraintLayout.LayoutParams.WRAP_CONTENT
-                )
-                binding.backgroundImageView.adjustViewBounds = true
-                zoomOut = false
-            } else {
-                Toast.makeText(
-                    getApplicationContext(),
-                    "FULLSCREEN!",
-                    Toast.LENGTH_LONG
-                ).show()
-                binding.backgroundImageView.layoutParams = ConstraintLayout.LayoutParams(
-                    ConstraintLayout.LayoutParams.MATCH_PARENT,
-                    ConstraintLayout.LayoutParams.MATCH_PARENT
-                )
-                binding.backgroundImageView.scaleType = ImageView.ScaleType.FIT_XY
-                zoomOut = true
-            }
-        }*/
-
-        binding.likeButton.setOnClickListener {
+        binding.zoomButton.setOnClickListener {
             val action = HomeDetailFragmentDirections.actionHomeDetailFragmentToImageFullScreenFragment(response)
             Navigation.findNavController(it).navigate(action)
         }

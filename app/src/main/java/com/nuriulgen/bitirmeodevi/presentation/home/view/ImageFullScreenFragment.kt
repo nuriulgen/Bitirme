@@ -33,6 +33,7 @@ class ImageFullScreenFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
         val response = args.imageModel
         binding.apply {
             /**
@@ -41,7 +42,6 @@ class ImageFullScreenFragment : Fragment() {
             Glide.with(view)
                 .load(response.images?.get(0)?.url.toString())
                 .into(binding.fullScreemImageView)
-
         }
 
         binding.backButton.setOnClickListener {

@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.nuriulgen.bitirmeodevi.R
+import com.nuriulgen.bitirmeodevi.adapter.ChipsAdapter
 import com.nuriulgen.bitirmeodevi.adapter.MightNeedAdapter
 import com.nuriulgen.bitirmeodevi.adapter.TopPickAdapter
 import com.nuriulgen.bitirmeodevi.databinding.FragmentGuideBinding
@@ -45,6 +46,11 @@ class GuideFragment : Fragment() {
         guideViewModel.fetchTopPick().observe(viewLifecycleOwner){
             binding.topPickRecycler.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
             binding.topPickRecycler.adapter = TopPickAdapter(it)
+        }
+
+        guideViewModel.fetchGuide().observe(viewLifecycleOwner){
+            binding.chipsRecycler.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
+            binding.chipsRecycler.adapter = ChipsAdapter(it)
         }
 
     }

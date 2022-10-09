@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="chipsAttractionXMl"
+            type="com.nuriulgen.bitirmeodevi.domain.model.GuideModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            android:layout_marginStart="25dp"
+            android:paddingEnd="10dp"
+            android:layout_marginEnd="10dp"
+            android:text="@{chipsAttractionXMl.title}"
+            app:chipBackgroundColor="#FCFCFD"
+            app:chipIcon="@drawable/ic_chip_sight"
+            tools:ignore="MissingConstraints,RtlSymmetry"
+            tools:layout_editor_absoluteX="154dp"
+            tools:layout_editor_absoluteY="190dp" />
+    </LinearLayout>
+</layout>
+
