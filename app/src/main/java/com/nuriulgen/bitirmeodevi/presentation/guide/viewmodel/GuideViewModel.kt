@@ -2,7 +2,9 @@ package com.nuriulgen.bitirmeodevi.presentation.guide.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
+import com.nuriulgen.bitirmeodevi.domain.model.GuideModel
 import com.nuriulgen.bitirmeodevi.domain.model.TravelModel
+import com.nuriulgen.bitirmeodevi.domain.usecase.GuideUseCase
 import com.nuriulgen.bitirmeodevi.domain.usecase.MightNeedUseCase
 import com.nuriulgen.bitirmeodevi.domain.usecase.TopPickUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -11,7 +13,8 @@ import javax.inject.Inject
 @HiltViewModel
 class GuideViewModel @Inject constructor(
     private val mightNeedUseCase: MightNeedUseCase,
-    private val topPickUseCase: TopPickUseCase
+    private val topPickUseCase: TopPickUseCase,
+    private val guideUseCase: GuideUseCase
 ): ViewModel() {
 
     fun fetchMightNeed(): LiveData<List<TravelModel>> {
@@ -25,6 +28,13 @@ class GuideViewModel @Inject constructor(
         topPickUseCase.apply {
             getTopPick()
             return topPick
+        }
+    }
+
+    fun fetchGuide(): LiveData<List<GuideModel>>{
+        guideUseCase.apply {
+            getGuide()
+            return guide
         }
     }
 

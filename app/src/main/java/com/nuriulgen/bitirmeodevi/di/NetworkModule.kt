@@ -1,15 +1,18 @@
 package com.nuriulgen.bitirmeodevi.di
 
 import com.nuriulgen.bitirmeodevi.data.remote.ApiService
+import com.nuriulgen.bitirmeodevi.data.remote.GuideApiService
 import com.nuriulgen.bitirmeodevi.data.remote.repository.*
 import com.nuriulgen.bitirmeodevi.domain.repository.*
 import com.nuriulgen.bitirmeodevi.util.ProjectConstants.Companion.BASE_URL
+import com.nuriulgen.bitirmeodevi.util.ProjectConstants.Companion.GUIDE_BASE_URL
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.create
 import javax.inject.Singleton
 
 @InstallIn(SingletonComponent::class)
@@ -33,7 +36,7 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    fun provideService(retrofit: Retrofit):ApiService{
+    fun provideService(retrofit: Retrofit): ApiService{
         return retrofit.create(ApiService::class.java)
     }
 
@@ -65,6 +68,19 @@ class NetworkModule {
     @Singleton
     fun provideAllRepository(apiService: ApiService): AllRepository{
         return AllRepositoryImp(apiService)
+    }
+
+    @Provides
+    @Singleton
+    fun provideGuideRepository(gsonConverterFactory: GsonConverterFactory): GuideRepository{
+        val retrofit = Retrofit.Builder()
+            .baseUrl(GUIDE_BASE_URL)
+            .addConverterFactory(gsonConverterFactory)
+            .build()
+
+        val guideApiService = retrofit.create(GuideApiService::class.java)
+
+        return GuideRepositoryImp(guideApiService)
     }
 
 }
