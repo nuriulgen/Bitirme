@@ -10,10 +10,15 @@ import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.test.core.app.ActivityScenario.launch
 import com.nuriulgen.bitirmeodevi.R
 import com.nuriulgen.bitirmeodevi.adapter.AddItemAdapter
+import com.nuriulgen.bitirmeodevi.data.local.TripDatabase
+
 import com.nuriulgen.bitirmeodevi.databinding.FragmentTripBinding
 import com.nuriulgen.bitirmeodevi.domain.model.AddItemModel
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 
 class TripFragment : Fragment() {
 
@@ -35,8 +40,19 @@ class TripFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+
         itemList = ArrayList()
+        lateinit var triplist: List<AddItemModel>
+
+        runBlocking {
+            triplist = TripDatabase(requireContext()).tripDao().getAllTrip()
+        }
+
+        for (itemModel in triplist) {
+            itemList.add(AddItemModel(itemModel.title, itemModel.subTitle, itemModel.days))
+        }
+
+        super.onViewCreated(view, savedInstanceState)
         addItemAdapter= context?.let { AddItemAdapter(it,itemList) }!!
         binding.itemRecyclerRow.layoutManager = LinearLayoutManager(context)
         binding.itemRecyclerRow.adapter = addItemAdapter
@@ -64,7 +80,12 @@ class TripFragment : Fragment() {
             val citys = city.text.toString()
             val countrys = country.text.toString()
             val days = day.text.toString()
-            itemList.add(AddItemModel(citys,countrys,"$days day"))
+
+            val item = AddItemModel(citys, countrys, "$days day")
+            itemList.add(item)
+            runBlocking {
+                TripDatabase(requireContext()).tripDao().insert(item)
+            }
             addItemAdapter.notifyDataSetChanged()
             Toast.makeText(context , "Adding new item", Toast.LENGTH_SHORT).show()
             dialog.dismiss()
