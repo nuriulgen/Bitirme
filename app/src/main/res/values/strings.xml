@@ -7,7 +7,7 @@
     <string name="flights">Flights</string>
     <string name="hotels">Hotels</string>
     <string name="transportations">Transportations</string>
-    <string name="where_next">Where Next</string>
+    <string name="where_next">Where Next City?</string>
     <string name="search">Search</string>
     <string name="top_destinations">TOP DESTINATIONS</string>
     <string name="trip_plan">Trip Plan</string>
@@ -25,4 +25,13 @@
     <string name="country">Country</string>
     <string name="city">City</string>
     <string name="how_long_day">How long are you going to stay?</string>
+    <string name="flight">flight</string>
+    <string name="hotels_description">hotels</string>
+    <string name="cars">cars</string>
+    <string name="taxi">taxi</string>
+    <string name="flightsText">Flights</string>
+    <string name="hotelsText">Hotels</string>
+    <string name="carsText">Cars</string>
+    <string name="taxiText">Taxi</string>
+    <string name="home_title">Where’s your next destination?</string>
 </resources>
