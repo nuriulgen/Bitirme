@@ -24,8 +24,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="400dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/ic_home_background"
-                tools:ignore="MissingConstraints">
+                android:src="@drawable/home_backgorund"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="-95dp"
+                tools:layout_editor_absoluteY="0dp">
 
             </ImageView>
 
@@ -102,6 +104,89 @@
                 android:layout_marginTop="36dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/home_tab" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="350dp"
+                android:layout_height="80dp"
+                android:layout_marginBottom="56dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints">
+
+                <ImageButton
+                    android:id="@+id/flightsButton"
+                    style="@style/CustomCategoryButtonStyle"
+                    android:background="@drawable/category_button_background"
+                    app:srcCompat="@drawable/ic_flight"
+                    android:contentDescription="@string/flight" />
+
+                <ImageButton
+                    android:id="@+id/hotelsButton"
+                    style="@style/CustomCategoryButtonStyle"
+                    android:background="@drawable/category_button_background"
+                    app:srcCompat="@drawable/ic_hotels"
+                    android:contentDescription="@string/hotels_description" />
+
+                <ImageButton
+                    android:id="@+id/carsButton"
+                    style="@style/CustomCategoryButtonStyle"
+                    android:background="@drawable/category_button_background"
+                    app:srcCompat="@drawable/ic_cars"
+                    android:contentDescription="@string/cars" />
+
+                <ImageButton
+                    android:id="@+id/taxiButton"
+                    style="@style/CustomCategoryButtonStyle"
+                    android:background="@drawable/category_button_background"
+                    android:layout_marginEnd="0dp"
+                    app:srcCompat="@drawable/ic_taxi"
+                    android:contentDescription="@string/taxi" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="350dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="13dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="13dp"
+                android:layout_marginBottom="24dp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+                app:layout_constraintEnd_toStartOf="@+id/imageView2"
+                app:layout_constraintStart_toEndOf="@+id/imageView2"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+                tools:ignore="MissingConstraints">
+
+                <TextView
+                    style="@style/CustomCategoryButtonTextStyle"
+                    android:text="@string/flightsText">
+                </TextView>
+
+                <TextView
+                    style="@style/CustomCategoryButtonTextStyle"
+                    android:text="@string/hotelsText">
+
+                </TextView>
+
+                <TextView
+                    style="@style/CustomCategoryButtonTextStyle"
+                    android:layout_marginStart="25dp"
+                    android:text="@string/carsText">
+                </TextView>
+
+                <TextView
+                    style="@style/CustomCategoryButtonTextStyle"
+                    android:layout_marginStart="30dp"
+                    android:text="@string/taxiText">
+                </TextView>
+
+            </LinearLayout>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

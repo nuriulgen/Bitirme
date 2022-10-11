@@ -1,17 +1,27 @@
 package com.nuriulgen.bitirmeodevi.presentation.search.view
 
+import android.annotation.SuppressLint
+import android.app.AlertDialog
 import android.os.Bundle
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.textfield.TextInputEditText
+import com.google.android.material.textfield.TextInputLayout
+import com.nuriulgen.bitirmeodevi.R
 import com.nuriulgen.bitirmeodevi.adapter.NearbyAttractionsAdapter
 import com.nuriulgen.bitirmeodevi.adapter.TopDestinationAdapter
 import com.nuriulgen.bitirmeodevi.databinding.FragmentSearchBinding
+import com.nuriulgen.bitirmeodevi.domain.model.TravelModel
 import com.nuriulgen.bitirmeodevi.presentation.search.viewmodel.SearchViewModel
+import com.nuriulgen.bitirmeodevi.util.ToastUtils
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -35,6 +45,7 @@ class SearchFragment : Fragment() {
         return binding.root
     }
 
+    @SuppressLint("InflateParams", "MissingInflatedId")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -47,9 +58,29 @@ class SearchFragment : Fragment() {
         searchViewModel.fetchNearbyAttractions().observe(viewLifecycleOwner){
             binding.nearbyAttractionsRecycler.layoutManager = LinearLayoutManager(context)
             binding.nearbyAttractionsRecycler.adapter = NearbyAttractionsAdapter(it)
-
         }
-    }
 
+
+        binding.textField.setEndIconOnClickListener {
+            val searchText = binding.textInput.text.toString()
+
+            searchViewModel.fetchAll().observe(viewLifecycleOwner){
+                var model = TravelModel()
+                for (travelModel in it)
+                {
+                    if (travelModel.city!!.lowercase() == searchText.lowercase()) {
+                        model = travelModel
+                        break
+                    }
+                }
+                if(model.city.isNullOrEmpty()){
+                    ToastUtils.showError("No Results",context)
+                }
+                val action = SearchFragmentDirections.actionSearchFragmentToHomeDetailFragment(model)
+                Navigation.findNavController(view).navigate(action)
+            }
+        }
+
+    }
 
 }

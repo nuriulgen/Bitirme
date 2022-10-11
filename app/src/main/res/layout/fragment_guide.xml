@@ -16,7 +16,7 @@
            android:layout_height="match_parent">
 
            <com.google.android.material.textfield.TextInputLayout
-               android:id="@+id/textField"
+               android:id="@+id/guideTextField"
                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
@@ -34,6 +34,7 @@
                tools:ignore="MissingConstraints">
 
                <com.google.android.material.textfield.TextInputEditText
+                   android:id="@+id/guideTextInput"
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content" />
 
@@ -107,29 +108,41 @@
                android:id="@+id/topPickRecycler"
                android:layout_width="match_parent"
                android:layout_height="250dp"
-               android:layout_marginTop="60dp"
+               android:layout_marginTop="16dp"
                app:layout_constraintEnd_toEndOf="parent"
-               app:layout_constraintHorizontal_bias="0.0"
+               app:layout_constraintHorizontal_bias="1.0"
                app:layout_constraintStart_toStartOf="parent"
-               app:layout_constraintTop_toBottomOf="@+id/textField"
+               app:layout_constraintTop_toBottomOf="@+id/topPickTitle"
                tools:ignore="MissingConstraints" />
 
            <HorizontalScrollView
+               android:id="@+id/horizontalScrollView"
                android:layout_width="427dp"
                android:layout_height="37dp"
+               android:layout_marginTop="24dp"
                android:orientation="horizontal"
-               app:layout_constraintBottom_toTopOf="@+id/topPickRecycler"
                app:layout_constraintEnd_toEndOf="parent"
                app:layout_constraintStart_toStartOf="parent"
-               app:layout_constraintTop_toBottomOf="@+id/textField">
+               app:layout_constraintTop_toBottomOf="@+id/guideTextField">
 
-                   <androidx.recyclerview.widget.RecyclerView
-                       android:id="@+id/chipsRecycler"
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content">
-                   </androidx.recyclerview.widget.RecyclerView>
+               <androidx.recyclerview.widget.RecyclerView
+                   android:id="@+id/chipsRecycler"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content">
+               </androidx.recyclerview.widget.RecyclerView>
 
            </HorizontalScrollView>
+
+           <TextView
+               android:id="@+id/topPickTitle"
+               style="@style/SubTitleText"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginStart="16dp"
+               android:layout_marginTop="24dp"
+               android:text="Top-Pick-Articles"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
 
 
        </androidx.constraintlayout.widget.ConstraintLayout>

@@ -44,7 +44,7 @@
                 tools:targetApi="p" />
 
             <ImageButton
-                android:id="@+id/likeButton"
+                android:id="@+id/zoomButton"
                 android:layout_width="33dp"
                 android:layout_height="33dp"
                 android:layout_marginTop="24dp"
