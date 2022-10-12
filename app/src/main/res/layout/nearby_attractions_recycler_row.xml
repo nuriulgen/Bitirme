@@ -58,14 +58,10 @@
 
         <TextView
             android:id="@+id/titleText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/CustomTitleTextStyle"
             android:layout_marginTop="56dp"
             android:text="@{nearbyAttractionXMl.city}"
-            android:fontFamily="@font/source_sans_pro_bold"
             android:textSize="25sp"
-            android:textFontWeight="700"
-            android:textColor="#FCFCFD"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.501"
             app:layout_constraintStart_toStartOf="parent"
@@ -75,14 +71,10 @@
 
         <TextView
             android:id="@+id/subTitleText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/CustomTitleTextStyle"
             android:layout_marginTop="4dp"
             android:text="@{nearbyAttractionXMl.country}"
-            android:fontFamily="@font/source_sans_pro_regular"
-            android:textSize="25sp"
-            android:textFontWeight="400"
-            android:textColor="#FCFCFD"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.501"
             app:layout_constraintStart_toStartOf="parent"

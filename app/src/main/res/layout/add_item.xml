@@ -24,7 +24,6 @@
             android:layout_height="wrap_content"
             android:padding="15dp"
             android:layout_marginTop="10dp"
-
             android:hint="@string/city"
             android:background="@drawable/dialog_background"
             android:autofillHints=""

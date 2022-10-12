@@ -19,6 +19,10 @@ class GuideViewModel @Inject constructor(
     private val allUseCase: AllUseCase
 ): ViewModel() {
 
+    /**
+     * Sayfada kullanılacak get request, view kısmından ayırıp viewModel içerisinde çağırıldı
+     */
+
     fun fetchMightNeed(): LiveData<List<TravelModel>> {
         mightNeedUseCase.apply {
             getMightNeed()
@@ -46,5 +50,4 @@ class GuideViewModel @Inject constructor(
             return guide
         }
     }
-
-   }
+}

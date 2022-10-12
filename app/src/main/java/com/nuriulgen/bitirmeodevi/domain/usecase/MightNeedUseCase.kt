@@ -19,6 +19,10 @@ class MightNeedUseCase @Inject constructor(
     private var _mightNeed = MutableLiveData<List<TravelModel>>()
     val mightNeed: LiveData<List<TravelModel>> = _mightNeed
 
+    /**
+     * API get request işlemi yapıldı.
+     * Bu get request başarılı veya başarsız olması durumlarına karşın uygun senaryolar yazıldı.
+     */
     fun getMightNeed(){
         mightNeedRepository.fetchMightNeed().enqueue(object: Callback<List<TravelModel>>{
             override fun onResponse(
@@ -31,7 +35,6 @@ class MightNeedUseCase @Inject constructor(
             override fun onFailure(call: Call<List<TravelModel>>, t: Throwable) {
                 Log.e("Might Need Error", t.toString())
             }
-
         })
     }
 }

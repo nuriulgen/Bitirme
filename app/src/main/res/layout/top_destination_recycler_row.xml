@@ -27,15 +27,9 @@
 
         <TextView
             android:id="@+id/titleText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/CustomTitleTextStyle"
             android:layout_marginTop="75dp"
             android:text="@{topDestinationXMl.city}"
-            android:fontFamily="@font/source_sans_pro_bold"
-            android:textColor="#FCFCFD"
-            android:textAlignment="center"
-            android:textFontWeight="700"
-            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.504"
             app:layout_constraintStart_toStartOf="parent"
@@ -44,15 +38,9 @@
 
         <TextView
             android:id="@+id/subTitleText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/CustomSubTitleTextStyle"
             android:layout_marginTop="4dp"
-            android:fontFamily="@font/source_sans_pro_regular"
             android:text="@{topDestinationXMl.country}"
-            android:textAlignment="center"
-            android:textColor="#FCFCFD"
-            android:textFontWeight="400"
-            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.505"
             app:layout_constraintStart_toStartOf="parent"

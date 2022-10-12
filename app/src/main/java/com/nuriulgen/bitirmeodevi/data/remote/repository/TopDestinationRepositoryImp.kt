@@ -7,6 +7,9 @@ import retrofit2.Call
 
 class TopDestinationRepositoryImp(private val apiService: ApiService) : TopDestinationRepository {
 
+    /**
+     * Oluşturulan ilgili repository implement edildi.
+     */
     override fun fetchTopDestination(): Call<List<TravelModel>> {
         return apiService.fetchTopDestination()
     }

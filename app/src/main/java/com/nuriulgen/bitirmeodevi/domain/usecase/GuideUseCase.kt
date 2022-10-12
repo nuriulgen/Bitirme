@@ -18,6 +18,10 @@ class GuideUseCase @Inject constructor(private val guideRepository: GuideReposit
     private var _guide = MutableLiveData<List<GuideModel>>()
     val guide: LiveData<List<GuideModel>> = _guide
 
+    /**
+     * API get request işlemi yapıldı.
+     * Bu get request başarılı veya başarsız olması durumlarına karşın uygun senaryolar yazıldı.
+     */
     fun getGuide(){
         guideRepository.fetchGuide().enqueue(object:
             Callback<List<GuideModel>>{
@@ -26,13 +30,11 @@ class GuideUseCase @Inject constructor(private val guideRepository: GuideReposit
                 response: Response<List<GuideModel>>
             ) {
                 _guide.value = response.body()
-                println(response.body())
             }
 
             override fun onFailure(call: Call<List<GuideModel>>, t: Throwable) {
                 Log.e("Guide Error", t.toString())
             }
-
         })
     }
 }

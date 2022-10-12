@@ -36,6 +36,9 @@ class MightNeedAdapter(private val itemList: List<TravelModel>): RecyclerView.Ad
         itemList[position].images!![0].let {
             holder.view.image.showImage(it.url, showPlaceHolder(holder.itemView.context)) }
 
+        /**
+         * Tıklanılan image'daki bilgilerle birlikte detail sayfasına gönderildi.
+         */
         holder.view.image.setOnClickListener {
             val action = GuideFragmentDirections.actionGuideFragmentToHomeDetailFragment(itemList[position])
             Navigation.findNavController(it).navigate(action)

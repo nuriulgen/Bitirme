@@ -11,10 +11,9 @@ interface TripDAO {
     @Insert // Ekleme
     suspend fun insert(model : AddItemModel)
 
-    // Insert -> sqlite insert into işlemi (ekleme)
-    //  vararg -> birden fazla, istediğimiz kadar food obje ekleyebiliyoruz
+    // Insert -> sqlite insert into işlemi (ekleme).
+    // Vararg -> birden fazla, istediğimiz kadar model obje ekleyebiliyoruz.
 
-    @Query("SELECT * FROM trip") // Tüm Verileri Çekme
+    @Query("SELECT * FROM trip") // Tüm Verileri Çekme.
     suspend fun getAllTrip() : List<AddItemModel>
-
 }

@@ -25,9 +25,16 @@ class TopPickAdapter(private val model: List<TravelModel>) : RecyclerView.Adapte
     override fun onBindViewHolder(holder: TopPickViewHolder, position: Int) {
         holder.view.topPickXMl = model[position]
 
+        /**
+         * Tıklanılan image'daki bilgilerle birlikte detail sayfasına gönderildi.
+         */
         model[position].images?.get(0)?.let { holder.view.imageView4.showImage(it.url,
             showPlaceHolder(holder.itemView.context)
         ) }
+
+        /**
+         * Tıklanılan image'daki bilgilerle birlikte detail sayfasına gönderildi.
+         */
         holder.view.imageView4.setOnClickListener {
             val action = GuideFragmentDirections.actionGuideFragmentToHomeDetailFragment(model[position])
             Navigation.findNavController(it).navigate(action)

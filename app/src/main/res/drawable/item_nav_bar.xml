@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:drawable="@android:color/holo_blue_bright" android:state_checked="true"/>
-    <item android:drawable="@android:color/holo_orange_light"/>
+<selector xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/ic_home_nav_bar" android:state_checked="false"/>
+    <item android:drawable="@drawable/ic_home_nav_light" android:state_checked="true"/>
+    <item android:state_selected="@drawable/ic_nav_bar_background" android:state_checked="true" tools:ignore="StateListReachable" />
 </selector>

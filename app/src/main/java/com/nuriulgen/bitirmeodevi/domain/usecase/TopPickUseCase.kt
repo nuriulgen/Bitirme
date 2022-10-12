@@ -19,6 +19,10 @@ class TopPickUseCase @Inject constructor(
     private var _topPick = MutableLiveData<List<TravelModel>>()
     val topPick: LiveData<List<TravelModel>> = _topPick
 
+    /**
+     * API get request işlemi yapıldı.
+     * Bu get request başarılı veya başarsız olması durumlarına karşın uygun senaryolar yazıldı.
+     */
     fun getTopPick(){
         topPickRepository.fetchTopPick().enqueue(object: retrofit2.Callback<List<TravelModel>> {
             override fun onResponse(
@@ -31,7 +35,6 @@ class TopPickUseCase @Inject constructor(
             override fun onFailure(call: Call<List<TravelModel>>, t: Throwable) {
                 Log.e("Top Pick Error", t.toString())
             }
-
         })
     }
 }

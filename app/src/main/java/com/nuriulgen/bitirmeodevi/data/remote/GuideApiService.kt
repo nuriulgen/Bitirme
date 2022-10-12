@@ -6,6 +6,9 @@ import retrofit2.Call
 import retrofit2.http.GET
 
 interface GuideApiService {
+    /**
+     * GET istekleri için interface oluşturuldu.
+     */
 
     @GET(".")
     fun fetchGuide(): Call<List<GuideModel>>

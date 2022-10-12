@@ -20,6 +20,10 @@ class TopDestinationUseCase @Inject constructor(
     private var _topDestination = MutableLiveData<List<TravelModel>>()
     val topDestination: LiveData<List<TravelModel>> = _topDestination
 
+    /**
+     * API get request işlemi yapıldı.
+     * Bu get request başarılı veya başarsız olması durumlarına karşın uygun senaryolar yazıldı.
+     */
     fun getTopDestination(){
         topDestinationRepository.fetchTopDestination().enqueue(object: Callback<List<TravelModel>> {
             override fun onResponse(

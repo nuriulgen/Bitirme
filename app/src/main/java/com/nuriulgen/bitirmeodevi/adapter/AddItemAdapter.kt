@@ -22,6 +22,9 @@ class AddItemAdapter(val c: Context, private val itemList:ArrayList<AddItemModel
 
     override fun onBindViewHolder(holder: AddItemViewHolder, position: Int) {
         val newList = itemList[position]
+        /**
+         * model'den gelen değerleri oluşturulan recycler view'deki propertyler ile eşleştirme yapıldı.
+         */
         holder.view.apply {
             listTitle.text = newList.title
             listSubTitle.text = newList.subTitle
@@ -32,5 +35,4 @@ class AddItemAdapter(val c: Context, private val itemList:ArrayList<AddItemModel
     override fun getItemCount(): Int {
         return itemList.size
     }
-
 }

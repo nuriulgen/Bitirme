@@ -8,8 +8,10 @@ import retrofit2.Call
 
 class AllRepositoryImp(private val apiService: ApiService): AllRepository {
 
+    /**
+     * Oluşturulan ilgili repository implement edildi.
+     */
     override fun fetchAll(): Call<List<TravelModel>> {
         return apiService.fetchAll()
     }
-
 }

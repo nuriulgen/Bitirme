@@ -16,7 +16,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding : ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
@@ -31,6 +30,7 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val navController = navHostFragment.navController
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigatin_view)
+
         NavigationUI.setupWithNavController(bottomNavigationView, navController)
 
         /*
@@ -49,10 +49,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun showBottomNav() {
         binding.bottomNavigatinView.visibility = View.VISIBLE
-
     }
 
     private fun hideBottomNav() {
         binding.bottomNavigatinView.visibility = View.GONE
     }
-    }
+}

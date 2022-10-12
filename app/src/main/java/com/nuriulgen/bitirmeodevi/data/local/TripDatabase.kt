@@ -30,10 +30,12 @@ abstract class TripDatabase : RoomDatabase() {
             }
         }
 
+        /**
+         * Room database oluşturuldu.
+         */
         private fun createDatabase(context:Context) = Room.databaseBuilder(
             context.applicationContext,
             TripDatabase::class.java, "tripDatabase")
             .build()
     }
-
 }

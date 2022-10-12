@@ -7,6 +7,9 @@ import retrofit2.Call
 
 class MightNeedRepositoryImp(private val apiService: ApiService): MightNeedRepository {
 
+    /**
+     * Oluşturulan ilgili repository implement edildi.
+     */
     override fun fetchMightNeed(): Call<List<TravelModel>> {
         return apiService.fetchMightNeed()
     }

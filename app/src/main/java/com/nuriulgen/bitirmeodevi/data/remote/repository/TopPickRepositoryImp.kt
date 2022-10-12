@@ -6,6 +6,10 @@ import com.nuriulgen.bitirmeodevi.domain.repository.TopPickRepository
 import retrofit2.Call
 
 class TopPickRepositoryImp(private val apiService: ApiService): TopPickRepository {
+
+    /**
+     * Oluşturulan ilgili repository implement edildi.
+     */
     override fun fetchTopPick(): Call<List<TravelModel>> {
        return apiService.fetchTopPick()
     }

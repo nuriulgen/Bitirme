@@ -7,6 +7,9 @@ import retrofit2.Call
 
 class NearbyAttractionsRepositoryImp(private val apiService: ApiService): NearbyAttractionsRepository {
 
+    /**
+     * Oluşturulan ilgili repository implement edildi.
+     */
     override fun fetchNearbyAttractions(): Call<List<TravelModel>> {
         return apiService.fetchNearbyAttractions()
     }

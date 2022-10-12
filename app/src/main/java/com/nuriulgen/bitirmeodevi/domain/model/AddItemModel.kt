@@ -5,6 +5,9 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "trip")
 data class AddItemModel(
+    /**
+     * Oluşturulan her yeni item'in farklı bir  id alabilmesi için  @PrimaryKey(autoGenerate = true) kullanıldı.
+     */
     @PrimaryKey(autoGenerate = true) val id: Int,
     val title: String,
     val subTitle: String,

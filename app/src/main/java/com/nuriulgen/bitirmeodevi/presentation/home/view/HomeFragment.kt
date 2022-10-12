@@ -23,9 +23,6 @@ class HomeFragment : Fragment() {
     private lateinit var binding : FragmentHomeBinding
     private val homeViewModel by viewModels<HomeViewModel>()
 
-    private lateinit var viewPager: ViewPager
-    private lateinit var tabLayout: TabLayout
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -42,36 +39,21 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-      /*  tabLayout = binding.tabLayout
-        viewPager = binding.viewPager
-
-        viewPager.adapter = ViewPagerAdapter(childFragmentManager)
-        tabLayout.setupWithViewPager(viewPager)
-
-
-        // It is used to join TabLayout with ViewPager.
-        tabLayout.setupWithViewPager(viewPager);*/
-
-        //viewPager.adapter = ViewPagerAdapter(childFragmentManager)
-       /* TabLayoutMediator(tabLayout,viewPager){ tab,index ->
-            tab.text = when(index) {
-                0 -> { "All" }
-                1 -> { "Flights" }
-                2 -> { "Hotels" }
-                3 -> {  "Transportations" }
-                else -> {
-                    throw Resources.NotFoundException("")
-                }
-            }
-        }.attach()*/
-
-
         homeViewModel.fetchAll().observe(viewLifecycleOwner){
+
+            /**
+             * Oluşturulan adapter ve recycler view bağlanıldı.
+             */
             binding.allRecycler.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL,false)
             binding.allRecycler.adapter = AllAdapter(it)
         }
 
         binding.apply {
+
+            /**
+             * homeViewModel içerisinde birden fazla metod çağrılacağı için,
+             * bu metodları apply() metodunun scope içerisinde toplanıldı.
+             */
             flightsButton.setOnClickListener {
                 ToastUtils.showError("Clicked Flights",context)
             }

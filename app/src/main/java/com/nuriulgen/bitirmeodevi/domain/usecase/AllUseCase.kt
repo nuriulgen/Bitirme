@@ -19,6 +19,10 @@ class AllUseCase @Inject constructor(
     private var _all = MutableLiveData<List<TravelModel>>()
     val all: LiveData<List<TravelModel>> = _all
 
+    /**
+     * API get request işlemi yapıldı.
+     * Bu get request başarılı veya başarsız olması durumlarına karşın uygun senaryolar yazıldı.
+     */
     fun getAll(){
         allRepository.fetchAll().enqueue(object:
             retrofit2.Callback<List<TravelModel>>{

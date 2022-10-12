@@ -36,6 +36,10 @@ class TopDestinationAdapter(
         itemList[position].images?.get(0)?.let { holder.view.imageView.showImage(it.url,
             showPlaceHolder(holder.itemView.context)
         ) }
+
+        /**
+         * Tıklanılan image'daki bilgilerle birlikte detail sayfasına gönderildi.
+         */
         holder.view.imageView.setOnClickListener {
             val action = SearchFragmentDirections.actionSearchFragmentToHomeDetailFragment(itemList[position])
             findNavController(it).navigate(action)
@@ -46,5 +50,4 @@ class TopDestinationAdapter(
     override fun getItemCount(): Int {
       return itemList.size
     }
-
 }

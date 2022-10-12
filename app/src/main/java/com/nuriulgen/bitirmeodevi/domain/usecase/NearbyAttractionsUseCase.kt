@@ -19,6 +19,10 @@ class NearbyAttractionsUseCase @Inject constructor(
     private var _nearbyAttractions = MutableLiveData<List<TravelModel>>()
     val nearbyAttractions : LiveData<List<TravelModel>> = _nearbyAttractions
 
+    /**
+     * API get request işlemi yapıldı.
+     * Bu get request başarılı veya başarsız olması durumlarına karşın uygun senaryolar yazıldı.
+     */
     fun getNearbyAttractions(){
         nearbyAttractionsRepository.fetchNearbyAttractions().enqueue(object: Callback<List<TravelModel>>{
             override fun onResponse(

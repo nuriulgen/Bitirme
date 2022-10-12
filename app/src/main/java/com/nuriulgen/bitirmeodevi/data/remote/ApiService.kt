@@ -7,6 +7,10 @@ import retrofit2.http.GET
 
 interface ApiService {
 
+    /**
+     * GET istekleri için interface oluşturuldu.
+     */
+
     @GET(".")
     fun fetchAll(): Call<List<TravelModel>>
 

@@ -16,8 +16,6 @@ class HomeDetailFragment : Fragment() {
     private lateinit var binding: FragmentHomeDetailBinding
     private val args: HomeDetailFragmentArgs by navArgs()
 
-    private var zoomOut = false
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -48,7 +46,11 @@ class HomeDetailFragment : Fragment() {
                 .load(response.images?.get(0)?.url.toString())
                 .into(binding.backgroundImageView)
         }
+
         binding.zoomButton.setOnClickListener {
+            /**
+             * Zoom butonuna basınca image full screen gösterilmesi için FullScreenFragment yönlendirildi.
+             */
             val action = HomeDetailFragmentDirections.actionHomeDetailFragmentToImageFullScreenFragment(response)
             Navigation.findNavController(it).navigate(action)
         }

@@ -42,6 +42,10 @@ class GuideFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        /**
+         * guideViewModel içerisinde birden fazla metod çağrılacağı için,
+         * bu metodları apply() metodunun scope içerisinde toplanıldı.
+         */
         guideViewModel.apply {
 
             fetchMightNeed().observe(viewLifecycleOwner){
@@ -60,23 +64,43 @@ class GuideFragment : Fragment() {
             }
         }
 
+        searchCity()
+}
+
+    private fun searchCity(){
         binding.guideTextField.setEndIconOnClickListener {
+            /**
+             * TextField içerisine yazılan value alınıp değişkene atıldı.
+             */
             val searchText = binding.guideTextInput.text.toString()
 
             guideViewModel.fetchAll().observe(viewLifecycleOwner){
                 var model = TravelModel()
                 for (travelModel in it)
                 {
+                    /**
+                     * Model'in içerisinde bulunan ve aranılan değeleri,
+                     * büyük, küçük harf sorunu olmaması için lowercase() metodu kullanıldı.
+                     */
                     if (travelModel.city!!.lowercase() == searchText.lowercase()) {
                         model = travelModel
                         break
                     }
                 }
+
+                /**
+                 * Eğer aranılan değer Api'den gelen değerle eşleşmemesi durumunda,
+                 * kullanıciya toast message gösterildi.
+                 */
                 if(model.city.isNullOrEmpty()){
                     ToastUtils.showError("No Results",context)
                 }
+
+                /**
+                 * Aranılan value değeri API'da mevcut ise bu value değeri ile ilgli detail sayfasına yönlendirild.
+                 */
                 val action = GuideFragmentDirections.actionGuideFragmentToHomeDetailFragment(model)
-                Navigation.findNavController(view).navigate(action)
+                view?.let { it1 -> Navigation.findNavController(it1).navigate(action) }
             }
         }
     }

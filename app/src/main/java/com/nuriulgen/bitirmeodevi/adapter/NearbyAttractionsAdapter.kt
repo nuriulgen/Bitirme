@@ -28,10 +28,16 @@ class NearbyAttractionsAdapter(private val itemList: List<TravelModel>):
     override fun onBindViewHolder(holder: NearbyAttractionsViewHolder, position: Int) {
         holder.view.nearbyAttractionXMl = itemList[position]
 
+        /*
+        * Glide ve extension ile image yüklemek.
+        */
         itemList[position].images?.get(0)?.let { holder.view.backgroundImage.showImage(it.url,
             showPlaceHolder(holder.itemView.context)
         ) }
 
+        /**
+         * Tıklanılan image'daki bilgilerle birlikte detail sayfasına gönderildi.
+         */
         holder.view.backgroundImage.setOnClickListener {
             val action = SearchFragmentDirections.actionSearchFragmentToHomeDetailFragment(itemList[position])
             Navigation.findNavController(it).navigate(action)

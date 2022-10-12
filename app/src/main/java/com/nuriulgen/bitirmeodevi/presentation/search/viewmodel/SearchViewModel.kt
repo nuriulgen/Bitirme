@@ -16,6 +16,10 @@ class SearchViewModel @Inject constructor(
     private val allUseCase: AllUseCase
 ): ViewModel() {
 
+    /**
+     * Sayfada kullanılacak get request, view kısmından ayırıp viewModel içerisinde çağırıldı.
+     */
+
     fun fetchDestination(): LiveData<List<TravelModel>> {
         topDestinationUseCase.apply {
             getTopDestination()

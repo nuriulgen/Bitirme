@@ -8,6 +8,9 @@ import retrofit2.Call
 
 class GuideRepositoryImp(private val guideApiService: GuideApiService): GuideRepository {
 
+    /**
+     * Oluşturulan ilgili repository implement edildi.
+     */
     override fun fetchGuide(): Call<List<GuideModel>> {
         return guideApiService.fetchGuide()
     }

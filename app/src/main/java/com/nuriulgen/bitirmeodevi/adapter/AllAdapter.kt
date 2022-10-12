@@ -32,6 +32,10 @@ class AllAdapter(private val itemList: List<TravelModel>): RecyclerView.Adapter<
         itemList[position].images?.get(0)?.let { holder.view.allImage.showImage(it.url,
             showPlaceHolder(holder.itemView.context)
         ) }
+
+        /**
+         * Tıklanılan image'daki bilgilerle birlikte detail sayfasına gönderildi.
+         */
         holder.view.allImage.setOnClickListener {
             val action = HomeFragmentDirections.actionHomeFragmentToHomeDetailFragment(itemList[position])
             Navigation.findNavController(it).navigate(action)

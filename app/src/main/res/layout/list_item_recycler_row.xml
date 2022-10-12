@@ -28,13 +28,9 @@
 
         <TextView
             android:id="@+id/listTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
+            style="@style/CustomTitleTextStyle"
+            android:layout_marginTop="70dp"
             android:text=""
-            android:textColor="#FCFCFD"
-            android:fontFamily="@font/source_sans_pro_bold"
-            android:textFontWeight="700"
             android:textSize="25sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -43,13 +39,9 @@
 
         <TextView
             android:id="@+id/listSubTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            style="@style/CustomSubTitleTextStyle"
             android:text=""
-            android:textSize="18sp"
-            android:textColor="#FCFCFD"
-            android:fontFamily="@font/source_sans_pro_regular"
+            android:layout_marginTop="15dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/listTitle" />

@@ -49,38 +49,58 @@ class SearchFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        searchViewModel.apply {
 
-        searchViewModel.fetchDestination().observe(viewLifecycleOwner) {
-            binding.topDestinationRecycler.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL,false)
-            binding.topDestinationRecycler.adapter = TopDestinationAdapter(it)
+            /**
+             * searchViewModel içerisinde birden fazla metod çağrılacağı için,
+             * bu metodları apply() metodunun scope içerisinde toplanıldı.
+             */
+            fetchDestination().observe(viewLifecycleOwner) {
+                binding.topDestinationRecycler.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL,false)
+                binding.topDestinationRecycler.adapter = TopDestinationAdapter(it)
+            }
 
-        }
-        searchViewModel.fetchNearbyAttractions().observe(viewLifecycleOwner){
-            binding.nearbyAttractionsRecycler.layoutManager = LinearLayoutManager(context)
-            binding.nearbyAttractionsRecycler.adapter = NearbyAttractionsAdapter(it)
+            fetchNearbyAttractions().observe(viewLifecycleOwner){
+                binding.nearbyAttractionsRecycler.layoutManager = LinearLayoutManager(context)
+                binding.nearbyAttractionsRecycler.adapter = NearbyAttractionsAdapter(it)
+            }
         }
 
 
         binding.textField.setEndIconOnClickListener {
+            /**
+             * TextField içerisine yazılan value alınıp değişkene atıldı.
+             */
             val searchText = binding.textInput.text.toString()
 
             searchViewModel.fetchAll().observe(viewLifecycleOwner){
                 var model = TravelModel()
                 for (travelModel in it)
                 {
+                    /**
+                     * Model'in içerisinde bulunan ve aranılan değeleri,
+                     * büyük, küçük harf sorunu olmaması için lowercase() metodu kullanıldı.
+                     */
                     if (travelModel.city!!.lowercase() == searchText.lowercase()) {
                         model = travelModel
                         break
                     }
                 }
+
+                /**
+                 * Eğer aranılan değer Api'den gelen değerle eşleşmemesi durumunda,
+                 * kullanıciya toast message gösterildi.
+                 */
                 if(model.city.isNullOrEmpty()){
                     ToastUtils.showError("No Results",context)
                 }
+
+                /**
+                 * Aranılan value değeri API'da mevcut ise bu value değeri ile ilgli detail sayfasına yönlendirild.
+                 */
                 val action = SearchFragmentDirections.actionSearchFragmentToHomeDetailFragment(model)
                 Navigation.findNavController(view).navigate(action)
             }
         }
-
     }
-
 }

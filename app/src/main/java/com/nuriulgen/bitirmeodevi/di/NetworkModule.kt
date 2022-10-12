@@ -1,11 +1,10 @@
 package com.nuriulgen.bitirmeodevi.di
 
+import com.nuriulgen.bitirmeodevi.BuildConfig
 import com.nuriulgen.bitirmeodevi.data.remote.ApiService
 import com.nuriulgen.bitirmeodevi.data.remote.GuideApiService
 import com.nuriulgen.bitirmeodevi.data.remote.repository.*
 import com.nuriulgen.bitirmeodevi.domain.repository.*
-import com.nuriulgen.bitirmeodevi.util.ProjectConstants.Companion.BASE_URL
-import com.nuriulgen.bitirmeodevi.util.ProjectConstants.Companion.GUIDE_BASE_URL
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -19,17 +18,29 @@ import javax.inject.Singleton
 @Module
 class NetworkModule {
 
+    /**
+     * BASE_URL, API_KEY gibi özel değerler için güvenlik açığı olmaması için gizlendi.
+     */
+    private val baseUrl = BuildConfig.BASE_URL
+    private val guideBaseUrl = BuildConfig.GUIDE_BASE_URL
+
+    /**
+     *  modelimizi json convert edebilmesi için GsonConvertorFactory kullanıldı.
+     */
     @Provides
     @Singleton
     fun provideGsonConvertorFactory(): GsonConverterFactory {
         return GsonConverterFactory.create()
     }
 
+    /**
+     * Retrofit ( GET, POST vb.)
+     */
     @Provides
     @Singleton
     fun provideRetrofit(gsonConverterFactory: GsonConverterFactory): Retrofit{
         return Retrofit.Builder()
-            .baseUrl(BASE_URL)
+            .baseUrl(baseUrl)
             .addConverterFactory(gsonConverterFactory)
             .build()
     }
@@ -70,11 +81,14 @@ class NetworkModule {
         return AllRepositoryImp(apiService)
     }
 
+    /**
+     * Api Service base url farklı olduğu için yeni bir retrofit builde oluşturuldu.
+     */
     @Provides
     @Singleton
     fun provideGuideRepository(gsonConverterFactory: GsonConverterFactory): GuideRepository{
         val retrofit = Retrofit.Builder()
-            .baseUrl(GUIDE_BASE_URL)
+            .baseUrl(guideBaseUrl)
             .addConverterFactory(gsonConverterFactory)
             .build()
 
