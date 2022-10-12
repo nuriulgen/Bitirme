@@ -23,8 +23,6 @@ için gezilecek yer önerileri, gezilecek yer hakkında bilgiler sağlayamaya y�
 • Şehir arama özelliği
 
 
-Listelenen yemeklerin görselleri Picasso yardımı ile veritabanından çekilmektedir. 
-
 
 # Kullanılan Kütüphaneler
 
