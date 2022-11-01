@@ -32,7 +32,7 @@ için gezilecek yer önerileri, gezilecek yer hakkında bilgiler sağlayamaya y�
 
 • Data Binding
 
-• Corotines
+• Coroutines
 
 • Room
 
@@ -46,4 +46,3 @@ için gezilecek yer önerileri, gezilecek yer hakkında bilgiler sağlayamaya y�
 
 • Gson
 
-# Uygulama Video
